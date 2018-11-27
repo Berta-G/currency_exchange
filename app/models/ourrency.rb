@@ -1,0 +1,2 @@
+class Ourrency < ApplicationRecord
+end
