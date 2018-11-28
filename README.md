@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I foucused on creating a quote and order and consumed over the 2 hours limit, so:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
+TODO:
+- importing csv to load denominations
+- Serializers! Orders would return the attached notifications via a serializer.
+- Better tests, very basic coverage.
+- NO THREAD SAFE!
+- General refactor.
+- logging
+- Users are not hardcoded, I'm simply ignoring them.
 * ...
