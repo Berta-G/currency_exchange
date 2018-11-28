@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_27_231115) do
+ActiveRecord::Schema.define(version: 2018_11_28_114648) do
 
   create_table "currencies", force: :cascade do |t|
     t.string "code", null: false
@@ -18,6 +18,22 @@ ActiveRecord::Schema.define(version: 2018_11_27_231115) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["code"], name: "index_currencies_on_code"
+  end
+
+  create_table "denominations", force: :cascade do |t|
+    t.integer "currency_id", null: false
+    t.integer "amount", null: false
+    t.decimal "value", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "order_denominations", force: :cascade do |t|
+    t.integer "order_id", null: false
+    t.integer "denomination_id", null: false
+    t.integer "amount", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|
