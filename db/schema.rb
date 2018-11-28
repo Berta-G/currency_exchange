@@ -12,19 +12,19 @@
 
 ActiveRecord::Schema.define(version: 2018_11_27_231115) do
 
+  create_table "currencies", force: :cascade do |t|
+    t.string "code", null: false
+    t.decimal "exchange_rate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_currencies_on_code"
+  end
+
   create_table "orders", force: :cascade do |t|
     t.integer "quote_id", null: false
     t.string "status", default: "unfulfilled"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "ourrencies", force: :cascade do |t|
-    t.string "code", null: false
-    t.decimal "exchange_rate"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["code"], name: "index_ourrencies_on_code"
   end
 
   create_table "quotes", force: :cascade do |t|
